@@ -1,0 +1,9 @@
+policy,reference_condition,comparison_condition,episodes,both_succeed,reference_only_succeeds,comparison_only_succeeds,neither_succeeds,success_rate_change_percentage_points,exact_mcnemar_p_value,holm_adjusted_p_value
+ppo_normal,unmasked,wind_blind,50,25,25,0,0,-50.0,5.960464477539063e-08,1.7881393432617188e-07
+ppo_robust,unmasked,wind_blind,50,7,28,1,14,-54.0,1.1175870895385742e-07,3.3527612686157227e-07
+ppo_normal,unmasked,wind_rotated,50,0,50,0,0,-100.0,1.7763568394002505e-15,7.105427357601002e-15
+ppo_robust,unmasked,wind_rotated,50,1,34,0,15,-68.0,1.1641532182693481e-10,4.656612873077393e-10
+ppo_normal,odor_blind,odor_wind_blind,50,0,3,0,47,-6.0,0.25,0.5
+ppo_robust,odor_blind,odor_wind_blind,50,0,18,0,32,-36.0,7.62939453125e-06,1.52587890625e-05
+ppo_normal,odor_blind,odor_blind_wind_rotated,50,0,3,0,47,-6.0,0.25,0.5
+ppo_robust,odor_blind,odor_blind_wind_rotated,50,1,17,0,32,-34.0,1.52587890625e-05,1.52587890625e-05

@@ -1,0 +1,12 @@
+# Complete dependency set for the project.
+# Editable equivalent: pip install -e ".[all]"
+numpy>=1.26,<3
+pygame>=2.5,<3
+gymnasium>=1.0,<2
+stable-baselines3>=2.4,<3
+matplotlib>=3.8,<4
+pandas>=2.2,<4
+imageio>=2.34,<3
+pillow>=10,<13
+pytest>=8,<10
+ruff>=0.9,<1

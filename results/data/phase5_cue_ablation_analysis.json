@@ -1,0 +1,88 @@
+{
+  "protocol": "results/data/phase5_cue_ablation_protocol.json",
+  "predictions_supported": {
+    "robust_wind_shortcut": true,
+    "robust_without_both_cues": true,
+    "normal_odor_replication": true
+  },
+  "paired_comparisons": [
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_blind",
+      "episodes": 50,
+      "both_succeed": 7,
+      "reference_only_succeeds": 42,
+      "comparison_only_succeeds": 1,
+      "neither_succeeds": 0,
+      "success_rate_change_percentage_points": -82.0,
+      "exact_mcnemar_p_value": 1.000444171950221e-11,
+      "holm_adjusted_p_value": 2.000888343900442e-11
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_blind",
+      "episodes": 50,
+      "both_succeed": 17,
+      "reference_only_succeeds": 20,
+      "comparison_only_succeeds": 1,
+      "neither_succeeds": 12,
+      "success_rate_change_percentage_points": -38.0,
+      "exact_mcnemar_p_value": 2.09808349609375e-05,
+      "holm_adjusted_p_value": 2.09808349609375e-05
+    },
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_blind",
+      "episodes": 50,
+      "both_succeed": 26,
+      "reference_only_succeeds": 23,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 1,
+      "success_rate_change_percentage_points": -46.0,
+      "exact_mcnemar_p_value": 2.384185791015625e-07,
+      "holm_adjusted_p_value": 2.384185791015625e-07
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_blind",
+      "episodes": 50,
+      "both_succeed": 9,
+      "reference_only_succeeds": 28,
+      "comparison_only_succeeds": 2,
+      "neither_succeeds": 11,
+      "success_rate_change_percentage_points": -52.0,
+      "exact_mcnemar_p_value": 8.67992639541626e-07,
+      "holm_adjusted_p_value": 1.735985279083252e-06
+    },
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_wind_blind",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 49,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 1,
+      "success_rate_change_percentage_points": -98.0,
+      "exact_mcnemar_p_value": 3.552713678800501e-15,
+      "holm_adjusted_p_value": 1.0658141036401503e-14
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_wind_blind",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 37,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 13,
+      "success_rate_change_percentage_points": -74.0,
+      "exact_mcnemar_p_value": 1.4551915228366852e-11,
+      "holm_adjusted_p_value": 4.3655745685100555e-11
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+policy,reference_condition,comparison_condition,episodes,both_succeed,reference_only_succeeds,comparison_only_succeeds,neither_succeeds,success_rate_change_percentage_points,exact_mcnemar_p_value
+ppo_normal,unmasked,odor_blind,50,8,42,0,0,-84.0,4.547473508864641e-13
+ppo_robust,unmasked,odor_blind,50,20,14,5,11,-18.0,0.063568115234375

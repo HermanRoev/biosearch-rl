@@ -1,0 +1,5 @@
+policy,observation_condition,reference_geometry,comparison_geometry,episodes,both_succeed,reference_only_succeeds,comparison_only_succeeds,neither_succeeds,success_rate_change_percentage_points,exact_mcnemar_p_value,holm_adjusted_p_value
+ppo_normal,odor_blind,shifted_aligned,crosswind_decoupled,50,0,11,0,39,-22.0,0.0009765625,0.0009765625
+ppo_normal,unmasked,shifted_aligned,crosswind_decoupled,50,21,27,0,2,-54.0,1.4901161193847656e-08,2.9802322387695312e-08
+ppo_robust,odor_blind,shifted_aligned,crosswind_decoupled,50,6,3,23,18,40.0,8.797645568847656e-05,0.00017595291137695312
+ppo_robust,unmasked,shifted_aligned,crosswind_decoupled,50,48,2,0,0,-4.0,0.5,0.5

@@ -1,0 +1,79 @@
+{
+  "protocol": "results/data/irl_protocol.json",
+  "demonstration_attempts": 114,
+  "demonstration_successes_retained": 100,
+  "demonstration_transitions": 25298,
+  "bc_final_training_loss": 0.26521012306213376,
+  "bc_held_out_action_accuracy": 0.6494549627079748,
+  "bc_validation": {
+    "policy": "bc",
+    "episodes": 30,
+    "success_rate": 83.33333333333333,
+    "success_ci95_low": 66.43564949358398,
+    "success_ci95_high": 92.66345762815145,
+    "mean_success_steps": 256.56,
+    "mean_collisions": 83.83333333333333
+  },
+  "airl_selected_round": 1,
+  "airl_validation_success_rate": 93.33333333333333,
+  "final_evaluation": [
+    {
+      "policy": "moth",
+      "episodes": 50,
+      "success_rate": 88.0,
+      "success_ci95_low": 76.19518261679701,
+      "success_ci95_high": 94.38239984906774,
+      "mean_success_steps": 257.97727272727275,
+      "mean_collisions": 61.98
+    },
+    {
+      "policy": "bc",
+      "episodes": 50,
+      "success_rate": 82.0,
+      "success_ci95_low": 69.20394632569922,
+      "success_ci95_high": 90.22980732976582,
+      "mean_success_steps": 254.2439024390244,
+      "mean_collisions": 86.84
+    },
+    {
+      "policy": "airl",
+      "episodes": 50,
+      "success_rate": 92.0,
+      "success_ci95_low": 81.16175308165717,
+      "success_ci95_high": 96.84504859114071,
+      "mean_success_steps": 257.54347826086956,
+      "mean_collisions": 33.1
+    },
+    {
+      "policy": "ppo_normal",
+      "episodes": 50,
+      "success_rate": 100.0,
+      "success_ci95_low": 92.86524008666413,
+      "success_ci95_high": 100.0,
+      "mean_success_steps": 134.02,
+      "mean_collisions": 0.0
+    },
+    {
+      "policy": "ppo_robust",
+      "episodes": 50,
+      "success_rate": 78.0,
+      "success_ci95_low": 64.75845041874634,
+      "success_ci95_high": 87.24608402978559,
+      "mean_success_steps": 159.53846153846155,
+      "mean_collisions": 0.0
+    }
+  ],
+  "bc_airl_paired_success": {
+    "first_policy": "bc",
+    "second_policy": "airl",
+    "episodes": 50,
+    "both_succeed": 39,
+    "first_only_succeeds": 2,
+    "second_only_succeeds": 7,
+    "neither_succeeds": 2,
+    "second_minus_first_percentage_points": 10.0,
+    "exact_mcnemar_p_value": 0.1796875
+  },
+  "interpretation_rule": "AIRL is reported separately from its BC initialization. It is treated as an improvement only if final success exceeds BC without increasing collisions.",
+  "claim_boundary": "This is reward inference from a synthetic controller, not learning from animals and not evidence of biological reward recovery."
+}

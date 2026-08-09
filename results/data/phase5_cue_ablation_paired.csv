@@ -1,0 +1,7 @@
+policy,reference_condition,comparison_condition,episodes,both_succeed,reference_only_succeeds,comparison_only_succeeds,neither_succeeds,success_rate_change_percentage_points,exact_mcnemar_p_value,holm_adjusted_p_value
+ppo_normal,unmasked,odor_blind,50,7,42,1,0,-82.0,1.000444171950221e-11,2.000888343900442e-11
+ppo_robust,unmasked,odor_blind,50,17,20,1,12,-38.0,2.09808349609375e-05,2.09808349609375e-05
+ppo_normal,unmasked,wind_blind,50,26,23,0,1,-46.0,2.384185791015625e-07,2.384185791015625e-07
+ppo_robust,unmasked,wind_blind,50,9,28,2,11,-52.0,8.67992639541626e-07,1.735985279083252e-06
+ppo_normal,unmasked,odor_wind_blind,50,0,49,0,1,-98.0,3.552713678800501e-15,1.0658141036401503e-14
+ppo_robust,unmasked,odor_wind_blind,50,0,37,0,13,-74.0,1.4551915228366852e-11,4.3655745685100555e-11

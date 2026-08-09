@@ -1,0 +1,9 @@
+{
+  "selected_checkpoint": "models/robust/best/best_model.zip",
+  "selection_rule": "Highest pooled validation success across six fixed conditions; mean successful steps breaks ties.",
+  "validation_seed_start": 2500,
+  "validation_seed_end": 2519,
+  "episodes_per_condition": 20,
+  "pooled_success_rate": 75.83333333333333,
+  "mean_success_steps": 224.01098901098902
+}

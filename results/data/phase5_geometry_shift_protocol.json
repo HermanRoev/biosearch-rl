@@ -1,0 +1,42 @@
+{
+  "phase": "5.4 source/start geometry correlation test",
+  "question": "Do the frozen PPO policies still find a shifted source when the start's crosswind lane no longer predicts the source lane?",
+  "hypothesis": "If the wind-guided behavior relies on the fixed start/source geometry, success should collapse when source and start occupy opposite crosswind lanes.",
+  "models_frozen_before_design": true,
+  "training_or_checkpoint_selection_performed": false,
+  "physical_condition": "normal",
+  "geometry_conditions": [
+    "shifted_aligned",
+    "crosswind_decoupled"
+  ],
+  "policy_input_conditions": [
+    "unmasked",
+    "odor_blind"
+  ],
+  "episodes_per_cell": 50,
+  "seed_start": 7000,
+  "seed_end": 7049,
+  "max_steps": 600,
+  "source_assignment": "x=2.5; y=3 for even seeds and y=9 for odd seeds (25 each at n=50)",
+  "aligned_start": "x=16.5; source y plus deterministic Uniform[-1,1] crosswind jitter",
+  "decoupled_start": "x=16.5; opposite y lane plus the identical per-seed crosswind jitter",
+  "heading": "identical across paired geometry conditions; nominal upwind plus deterministic Uniform[-45,+45] degree jitter",
+  "lane_balance": "Both geometry conditions contain 25 starts in each lane marginally; only the source/start relationship changes.",
+  "obstacles": "removed in both conditions to prevent obstacle contact from forcing or blocking the required crosswind correction",
+  "odor_mask": [
+    "left_odor",
+    "right_odor",
+    "odor_difference",
+    "odor_detected",
+    "left_odor_moving_average",
+    "right_odor_moving_average",
+    "time_since_detection set to 1.0"
+  ],
+  "pairing": "Within policy and input state, aligned and decoupled conditions share source, plume/sensor seed, heading, jitter draw, and time limit.",
+  "predictions_declared_before_evaluation": {
+    "aligned_full_positive_control": "both frozen policies achieve at least 60% with full input when source and start remain aligned in shifted lanes",
+    "full_input_geometry_failure": "each policy drops by at least 30 percentage points in decoupled geometry, with Holm-adjusted p<0.05",
+    "robust_odor_blind_route_failure": "robust odor-hidden aligned success is at least 25%, decoupled success is at most 10%, and the paired drop is at least 20 points with Holm-adjusted p<0.05"
+  },
+  "statistics": "95% Wilson intervals; two-sided exact McNemar aligned-versus-decoupled tests; Holm correction over full and odor-hidden contrasts within policy"
+}

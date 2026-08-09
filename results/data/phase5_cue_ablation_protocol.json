@@ -1,0 +1,37 @@
+{
+  "phase": "5.2 odor/wind cue ablations",
+  "question": "Which observable cue supports odor-independent PPO search?",
+  "hypothesis": "Robust PPO learned wind-guided upwind navigation from the consistently downwind start.",
+  "physical_condition": "normal",
+  "policy_input_conditions": [
+    "unmasked",
+    "odor_blind",
+    "wind_blind",
+    "odor_wind_blind"
+  ],
+  "episodes_per_policy_input_condition": 50,
+  "seed_start": 5000,
+  "seed_end": 5049,
+  "max_steps": 600,
+  "paired_design": "All four input conditions use the same pose, simulation seed, physical plume, and time limit for a given policy and seed.",
+  "odor_mask": [
+    "left_odor",
+    "right_odor",
+    "odor_difference",
+    "odor_detected",
+    "left_odor_moving_average",
+    "right_odor_moving_average",
+    "time_since_detection set to 1.0"
+  ],
+  "wind_mask": [
+    "wind_heading_sin",
+    "wind_heading_cos",
+    "both components set to 0.0"
+  ],
+  "predictions_declared_before_evaluation": {
+    "robust_wind_shortcut": "wind-hidden robust success drops by at least 30 percentage points versus full observation with Holm-adjusted p<0.05",
+    "robust_without_both_cues": "combined-mask robust success <=10%",
+    "normal_odor_replication": "odor-hidden normal success drops by at least 50 percentage points"
+  },
+  "statistics": "95% Wilson intervals; two-sided exact McNemar tests versus full observation; Holm correction over three tests within each policy"
+}

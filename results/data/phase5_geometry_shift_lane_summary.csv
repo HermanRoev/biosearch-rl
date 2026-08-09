@@ -1,0 +1,17 @@
+policy,geometry_condition,observation_condition,source_lane,episodes,success_rate,mean_actual_odor_detection_percentage,mean_final_distance_to_source
+ppo_normal,crosswind_decoupled,odor_blind,lower,25,0.0,67.85999999999999,1.9215097314664917
+ppo_normal,crosswind_decoupled,odor_blind,upper,25,0.0,0.0,6.107430004475978
+ppo_normal,crosswind_decoupled,unmasked,lower,25,84.0,22.40157094847742,1.398558947993561
+ppo_normal,crosswind_decoupled,unmasked,upper,25,0.0,0.0,5.20369687935457
+ppo_normal,shifted_aligned,odor_blind,lower,25,16.0,64.85315933999173,1.4131451555404992
+ppo_normal,shifted_aligned,odor_blind,upper,25,28.0,23.13580326116011,4.99262468071464
+ppo_normal,shifted_aligned,unmasked,lower,25,100.0,55.73823937059046,0.42100222804677473
+ppo_normal,shifted_aligned,unmasked,upper,25,92.0,64.2596121956845,1.0031961505232567
+ppo_robust,crosswind_decoupled,odor_blind,lower,25,60.0,21.128406068376727,3.3463546955598225
+ppo_robust,crosswind_decoupled,odor_blind,upper,25,56.0,40.75939883331668,3.119101578821886
+ppo_robust,crosswind_decoupled,unmasked,lower,25,100.0,16.06567899174761,0.4152299981643614
+ppo_robust,crosswind_decoupled,unmasked,upper,25,92.0,25.675898793469315,0.7265537487073135
+ppo_robust,shifted_aligned,odor_blind,lower,25,20.0,16.346810922475477,5.494487972211582
+ppo_robust,shifted_aligned,odor_blind,upper,25,16.0,53.22517681659044,6.087510855485439
+ppo_robust,shifted_aligned,unmasked,lower,25,100.0,19.63561606776853,0.4083487911227514
+ppo_robust,shifted_aligned,unmasked,upper,25,100.0,53.59007536775452,0.40128595264768896

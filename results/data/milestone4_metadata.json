@@ -1,0 +1,23 @@
+{
+  "episodes_per_controller_condition": 50,
+  "seed_start": 3000,
+  "seed_end": 3049,
+  "max_steps": 600,
+  "conditions": [
+    "normal",
+    "moderate_noise",
+    "sensor_dropout",
+    "left_disabled",
+    "changed_wind",
+    "new_obstacles"
+  ],
+  "controllers": [
+    "random",
+    "moth",
+    "ppo_normal",
+    "ppo_robust"
+  ],
+  "paired_design": "Every controller receives the same start pose, plume seed, condition configuration, and time limit for a given seed.",
+  "normal_model": "models/best/best_model.zip",
+  "robust_model": "models/robust/best/best_model.zip"
+}

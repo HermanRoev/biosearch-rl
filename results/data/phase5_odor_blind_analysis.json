@@ -1,0 +1,33 @@
+{
+  "protocol": "results/data/phase5_odor_blind_protocol.json",
+  "classifications": {
+    "ppo_normal": "mixed_or_partial_odor_dependence",
+    "ppo_robust": "substantial_odor_independent_shortcut_performance"
+  },
+  "paired_comparisons": [
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_blind",
+      "episodes": 50,
+      "both_succeed": 8,
+      "reference_only_succeeds": 42,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 0,
+      "success_rate_change_percentage_points": -84.0,
+      "exact_mcnemar_p_value": 4.547473508864641e-13
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "odor_blind",
+      "episodes": 50,
+      "both_succeed": 20,
+      "reference_only_succeeds": 14,
+      "comparison_only_succeeds": 5,
+      "neither_succeeds": 11,
+      "success_rate_change_percentage_points": -18.0,
+      "exact_mcnemar_p_value": 0.063568115234375
+    }
+  ]
+}

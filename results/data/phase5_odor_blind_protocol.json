@@ -1,0 +1,40 @@
+{
+  "phase": "5.1 odor-blind diagnostic",
+  "question": "Can PPO find the source when odor-derived policy inputs are hidden?",
+  "physical_condition": "normal",
+  "episodes_per_policy_input_condition": 50,
+  "seed_start": 4000,
+  "seed_end": 4049,
+  "max_steps": 600,
+  "paired_design": "For each policy and seed, unmasked and odor-blind episodes use the same start pose, simulation seed, physical plume, and time limit.",
+  "masked_policy_features": [
+    "left_odor",
+    "right_odor",
+    "odor_difference",
+    "odor_detected",
+    "left_odor_moving_average",
+    "right_odor_moving_average",
+    "time_since_detection set to 1.0 (permanent absence)"
+  ],
+  "preserved_policy_features": [
+    "wind_heading_sin",
+    "wind_heading_cos",
+    "previous_action",
+    "front_obstacle_proximity",
+    "left_obstacle_proximity",
+    "right_obstacle_proximity"
+  ],
+  "preserved_simulator_state": [
+    "physical plume",
+    "physical sensor readings",
+    "recorded odor detections",
+    "source and obstacles"
+  ],
+  "interpretation_thresholds_declared_before_evaluation": {
+    "strong_evidence_of_odor_dependence": "odor-blind success <=10% and paired change <=-50 percentage points",
+    "substantial_shortcut_performance": "odor-blind success >=50%",
+    "otherwise": "mixed or partial odor dependence"
+  },
+  "primary_statistic": "paired success-rate change",
+  "paired_test": "two-sided exact McNemar test"
+}

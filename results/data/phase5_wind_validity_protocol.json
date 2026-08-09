@@ -1,0 +1,57 @@
+{
+  "phase": "5.3 valid-but-wrong wind-direction control",
+  "question": "Did wind masking hurt because the zero vector is out of distribution, or because PPO behavior depends on wind direction?",
+  "hypothesis": "If learned navigation uses wind direction, a unit-length wind vector rotated by 90 degrees should reduce success even though its encoding is valid.",
+  "physical_condition": "normal",
+  "policy_input_conditions": [
+    "unmasked",
+    "wind_blind",
+    "wind_rotated",
+    "odor_blind",
+    "odor_wind_blind",
+    "odor_blind_wind_rotated"
+  ],
+  "factorial_design": {
+    "odor": [
+      "available",
+      "hidden"
+    ],
+    "wind": [
+      "correct",
+      "zero_vector",
+      "valid_plus_or_minus_90_degrees"
+    ]
+  },
+  "episodes_per_policy_input_condition": 50,
+  "seed_start": 6000,
+  "seed_end": 6049,
+  "max_steps": 600,
+  "paired_design": "All six input conditions use the same pose, simulation seed, physical plume, and time limit for a given policy and seed.",
+  "odor_mask": [
+    "left_odor",
+    "right_odor",
+    "odor_difference",
+    "odor_detected",
+    "left_odor_moving_average",
+    "right_odor_moving_average",
+    "time_since_detection set to 1.0"
+  ],
+  "zero_wind_mask": [
+    "wind_heading_sin",
+    "wind_heading_cos",
+    "both components set to 0.0"
+  ],
+  "valid_wrong_wind": {
+    "operation": "rotate the observed sine/cosine pair; do not change norm",
+    "assignment": "-90 degrees for even seeds; +90 degrees for odd seeds",
+    "negative_rotation_episodes": 25,
+    "positive_rotation_episodes": 25,
+    "fixed_within_episode": true
+  },
+  "predictions_declared_before_evaluation": {
+    "robust_rotated_wind_with_odor": "robust success drops by at least 30 percentage points versus correct wind, with Holm-adjusted p<0.05",
+    "robust_rotated_wind_without_odor": "odor-hidden robust success drops by at least 20 percentage points versus correct wind, with Holm-adjusted p<0.05",
+    "zero_wind_without_odor_replication": "robust success with odor and wind both hidden remains <=10%"
+  },
+  "statistics": "95% Wilson intervals; two-sided exact McNemar tests for zero and rotated wind versus the matching correct-wind odor state; Holm correction over four tests within each policy"
+}

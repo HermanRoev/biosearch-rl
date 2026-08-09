@@ -1,0 +1,88 @@
+{
+  "protocol": "results/data/phase5_geometry_shift_protocol.json",
+  "design_precision_correction_after_evaluation": "The opposite-lane condition reverses the source/start relationship; it breaks the trained positive alignment but is not statistically independent geometry. Continuous independently sampled coordinates remain a separate future test.",
+  "predictions_supported": {
+    "aligned_full_positive_control": true,
+    "full_input_geometry_failure": false,
+    "robust_odor_blind_route_failure": false
+  },
+  "prediction_components": {
+    "normal_full_geometry_failure": true,
+    "robust_full_geometry_failure": false
+  },
+  "paired_comparisons": [
+    {
+      "policy": "ppo_normal",
+      "observation_condition": "odor_blind",
+      "reference_geometry": "shifted_aligned",
+      "comparison_geometry": "crosswind_decoupled",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 11,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 39,
+      "success_rate_change_percentage_points": -22.0,
+      "exact_mcnemar_p_value": 0.0009765625,
+      "holm_adjusted_p_value": 0.0009765625
+    },
+    {
+      "policy": "ppo_normal",
+      "observation_condition": "unmasked",
+      "reference_geometry": "shifted_aligned",
+      "comparison_geometry": "crosswind_decoupled",
+      "episodes": 50,
+      "both_succeed": 21,
+      "reference_only_succeeds": 27,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 2,
+      "success_rate_change_percentage_points": -54.0,
+      "exact_mcnemar_p_value": 1.4901161193847656e-08,
+      "holm_adjusted_p_value": 2.9802322387695312e-08
+    },
+    {
+      "policy": "ppo_robust",
+      "observation_condition": "odor_blind",
+      "reference_geometry": "shifted_aligned",
+      "comparison_geometry": "crosswind_decoupled",
+      "episodes": 50,
+      "both_succeed": 6,
+      "reference_only_succeeds": 3,
+      "comparison_only_succeeds": 23,
+      "neither_succeeds": 18,
+      "success_rate_change_percentage_points": 40.0,
+      "exact_mcnemar_p_value": 8.797645568847656e-05,
+      "holm_adjusted_p_value": 0.00017595291137695312
+    },
+    {
+      "policy": "ppo_robust",
+      "observation_condition": "unmasked",
+      "reference_geometry": "shifted_aligned",
+      "comparison_geometry": "crosswind_decoupled",
+      "episodes": 50,
+      "both_succeed": 48,
+      "reference_only_succeeds": 2,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 0,
+      "success_rate_change_percentage_points": -4.0,
+      "exact_mcnemar_p_value": 0.5,
+      "holm_adjusted_p_value": 0.5
+    }
+  ],
+  "post_hoc_mechanism_audit": {
+    "status": "exploratory; not part of preregistered hypothesis tests",
+    "robust_odor_blind": {
+      "shifted_aligned": {
+        "episodes": 50,
+        "crossed_world_centerline": 49,
+        "mean_crosswind_span": 7.6326551433853105,
+        "mean_closest_crosswind_distance_to_source_lane": 0.0467440154970418
+      },
+      "crosswind_decoupled": {
+        "episodes": 50,
+        "crossed_world_centerline": 50,
+        "mean_crosswind_span": 7.443140754147707,
+        "mean_closest_crosswind_distance_to_source_lane": 0.05479444121581457
+      }
+    }
+  }
+}

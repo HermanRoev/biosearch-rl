@@ -1,0 +1,32 @@
+{
+  "question": "Can synthetic moth-controller demonstrations produce a useful policy and reward without source coordinates or distance?",
+  "method": "class-balanced behavior cloning followed by BC-initialized adversarial IRL (AIRL)",
+  "demonstrator": "synthetic moth-inspired finite-state controller",
+  "successful_demonstrations": 100,
+  "demo_seed_start": 8000,
+  "held_out_demo_seed_start": 11000,
+  "validation_seeds": [
+    9000,
+    9029
+  ],
+  "evaluation_seeds": [
+    15000,
+    15049
+  ],
+  "policy_observation_values": 13,
+  "source_position_observed": false,
+  "source_distance_observed": false,
+  "environment_reward_used_by_bc_or_airl": false,
+  "source_contact_terminates_episode": true,
+  "physical_success_used_for_model_selection": true,
+  "airl_rounds": 6,
+  "round_timesteps": 4096,
+  "generator_samples_per_round": 8192,
+  "airl_initialization": "behavior-cloning policy weights",
+  "discriminator_epochs_per_round": 2,
+  "discriminator_learning_rate": 0.0001,
+  "n_envs": 4,
+  "seed": 23,
+  "max_steps": 600,
+  "claim_boundary": "This is reward inference from a synthetic controller, not learning from animals and not evidence of biological reward recovery."
+}

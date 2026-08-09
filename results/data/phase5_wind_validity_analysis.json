@@ -1,0 +1,122 @@
+{
+  "protocol": "results/data/phase5_wind_validity_protocol.json",
+  "manipulation_check": {
+    "rotation_degrees": [
+      -90.0,
+      90.0
+    ],
+    "wind_vector_norm": "preserved analytically by planar rotation",
+    "physical_simulation_changed": false
+  },
+  "predictions_supported": {
+    "robust_rotated_wind_with_odor": true,
+    "robust_rotated_wind_without_odor": true,
+    "zero_wind_without_odor_replication": true
+  },
+  "paired_comparisons": [
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_blind",
+      "episodes": 50,
+      "both_succeed": 25,
+      "reference_only_succeeds": 25,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 0,
+      "success_rate_change_percentage_points": -50.0,
+      "exact_mcnemar_p_value": 5.960464477539063e-08,
+      "holm_adjusted_p_value": 1.7881393432617188e-07
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_blind",
+      "episodes": 50,
+      "both_succeed": 7,
+      "reference_only_succeeds": 28,
+      "comparison_only_succeeds": 1,
+      "neither_succeeds": 14,
+      "success_rate_change_percentage_points": -54.0,
+      "exact_mcnemar_p_value": 1.1175870895385742e-07,
+      "holm_adjusted_p_value": 3.3527612686157227e-07
+    },
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_rotated",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 50,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 0,
+      "success_rate_change_percentage_points": -100.0,
+      "exact_mcnemar_p_value": 1.7763568394002505e-15,
+      "holm_adjusted_p_value": 7.105427357601002e-15
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "unmasked",
+      "comparison_condition": "wind_rotated",
+      "episodes": 50,
+      "both_succeed": 1,
+      "reference_only_succeeds": 34,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 15,
+      "success_rate_change_percentage_points": -68.0,
+      "exact_mcnemar_p_value": 1.1641532182693481e-10,
+      "holm_adjusted_p_value": 4.656612873077393e-10
+    },
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "odor_blind",
+      "comparison_condition": "odor_wind_blind",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 3,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 47,
+      "success_rate_change_percentage_points": -6.0,
+      "exact_mcnemar_p_value": 0.25,
+      "holm_adjusted_p_value": 0.5
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "odor_blind",
+      "comparison_condition": "odor_wind_blind",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 18,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 32,
+      "success_rate_change_percentage_points": -36.0,
+      "exact_mcnemar_p_value": 7.62939453125e-06,
+      "holm_adjusted_p_value": 1.52587890625e-05
+    },
+    {
+      "policy": "ppo_normal",
+      "reference_condition": "odor_blind",
+      "comparison_condition": "odor_blind_wind_rotated",
+      "episodes": 50,
+      "both_succeed": 0,
+      "reference_only_succeeds": 3,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 47,
+      "success_rate_change_percentage_points": -6.0,
+      "exact_mcnemar_p_value": 0.25,
+      "holm_adjusted_p_value": 0.5
+    },
+    {
+      "policy": "ppo_robust",
+      "reference_condition": "odor_blind",
+      "comparison_condition": "odor_blind_wind_rotated",
+      "episodes": 50,
+      "both_succeed": 1,
+      "reference_only_succeeds": 17,
+      "comparison_only_succeeds": 0,
+      "neither_succeeds": 32,
+      "success_rate_change_percentage_points": -34.0,
+      "exact_mcnemar_p_value": 1.52587890625e-05,
+      "holm_adjusted_p_value": 1.52587890625e-05
+    }
+  ]
+}
